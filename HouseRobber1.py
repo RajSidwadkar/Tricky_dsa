@@ -14,3 +14,23 @@ def rob(nums: List[int]) -> int:
         return dp[n-1] #dp[-1]
 
 print(rob([2,7,9,3,1]))
+
+#Solution 2
+
+def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+
+        if n == 1:
+            return nums[0]
+
+        temp = prev = 0
+        
+        current = 0
+
+        for i in range(n):
+            current = max(prev, temp + nums[i])
+            temp = prev
+            prev = current
+
+
+        return current
