@@ -1,4 +1,4 @@
-def rob(self, nums: List[int]) -> int:
+def rob(nums: List[int]) -> int:
         n = len(nums)
 
         if n == 1:
@@ -12,3 +12,5 @@ def rob(self, nums: List[int]) -> int:
             dp[i] = max(dp[i-1], dp[i-2] + nums[i])
 
         return dp[n-1] #dp[-1]
+
+print(rob([2,7,9,3,1]))
